@@ -1,5 +1,6 @@
 from datetime import datetime
 from VisaReminder import VisaReminder
+import time
 
 if __name__ == '__main__':
     #create a class object
@@ -16,5 +17,7 @@ if __name__ == '__main__':
                 print("From main.py, start run reminder......")
                 reminder.RunReminder()
                 print("From main.py, end run Reminder......")
+                time.sleep(59)
         except Exception as e:
             print("Error in main.py:", e)
+
