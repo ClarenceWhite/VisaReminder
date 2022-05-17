@@ -12,7 +12,7 @@ if __name__ == '__main__':
         print("From main.py, now minute is:", minute)
         try:
             #run reminder every 59 minutes
-            if minute % 59 == 0:
+            if minute % 1 == 0:
                 print("From main.py, start run reminder......")
                 reminder.RunReminder()
                 print("From main.py, end run Reminder......")
