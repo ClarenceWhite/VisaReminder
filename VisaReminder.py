@@ -10,7 +10,7 @@ from send_msg import Wechat
 
 
 class VisaReminder:
-    def RunReminder():
+    def RunReminder(self):
         #create a Config class object
         read_config = Config()
         #create a Wechat class object
