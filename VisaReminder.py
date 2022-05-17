@@ -30,7 +30,7 @@ class VisaReminder:
         options.add_argument('--no-sandbox')
 
         #get chrome driver path
-        driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+        driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
 
         #get requested link
         link = read_config.load()['link']
