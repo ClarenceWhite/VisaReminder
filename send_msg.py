@@ -3,21 +3,38 @@ import requests
 
 read_config = Config()
 api_url = read_config.load()['apikey']
+appToken = read_config.load()['appToken']
+uid = read_config.load()['uid']
 
-no = {
-    "title": "没有开放！",
-    "desp": "目前还没有开始预约！"
-}
-yes = {
-    "title": "开放预约！",
-    "desp": "现在开放预约了！快去抢位置！"
-}
+no = { 'appToken': appToken,
+            'content': '还是没有号，主人再等等看吧',
+            'uid': uid}
+
+yes = { 'appToken': appToken,
+            'content': '终于有号啦！主人快去抢号鸭',
+            'uid': uid}
+
+chromeError = { 'appToken': appToken,
+            'content': '呜呜呜，chrome程序可能出错了，服务器脚本失效！',
+            'uid': uid}
+
+mainError = { 'appToken': appToken,
+            'content': '呜呜呜，main程序可能出错了，服务器脚本失效！',
+            'uid': uid}
 
 class Wechat:
     def noway(self):
-        x = requests.post(api_url, data = no)
-        print(x.text)
+        x = requests.get(api_url, params=no)
+        print("noway text:\n", x.text)
     
     def available(self):
-        x = requests.post(api_url, data = yes)
-        print(x.text)
+        x = requests.get(api_url, params=yes)
+        print("available text:\n", x.text)
+
+    def chromeError(self):
+        x = requests.get(api_url, params=chromeError)
+        print("chromeError text:\n", x.text)
+
+    def mainError(self):
+        x = requests.get(api_url, params=mainError)
+        print("mainError text:\n", x.text)

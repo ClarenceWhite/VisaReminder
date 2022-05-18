@@ -45,6 +45,7 @@ class VisaReminder:
             first_next_element.click()
         except:
             print("Error in first step => open page and click on the first next")
+            send_msg.chromeError()
 
         try:
             # find the second 'Next ' button on the second page and click on it
@@ -55,6 +56,7 @@ class VisaReminder:
             second_next_element.click()
         except:
             print("Error in second step => click on the second next")
+            send_msg.chromeError()
 
         try:
             #check if there are slots available
@@ -72,12 +74,9 @@ class VisaReminder:
                 send_msg.available()
         except:
             print("Error in the third part => check alert message")
+            send_msg.chromeError()
         finally:
             driver.quit()
-
-
-# user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.83 Safari/537.36"
-# options.add_argument(f'user-agent={user_agent}')
 
 
 
