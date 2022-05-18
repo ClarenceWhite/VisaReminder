@@ -3,7 +3,7 @@ This is a visa reminder of visa for Belgium https://visaonweb.diplomatie.be/en, 
 This project is a practical of python selenium package, chrome headless on ubuntu linux, python WxPusher package (see: https://wxpusher.zjiecode.com/docs/#/), and python requests package.
 
 # Idea
-This project uses selenim to automate the control of the browser, through this tool you can automate many daily life alerts, such as alerting web content updates, grabbing tickets, and monitoring the running of the code deployed on the server to find running errors in time.
+This project uses selenium to automate the control of the browser, through this tool you can automate many daily life alerts, such as alerting web content updates, grabbing tickets, and monitoring the running of the code deployed on the server to find running errors in time.
 
 # Usage
 Both local and remote machine have to have a 'config.txt' with some confidential parameters in it
